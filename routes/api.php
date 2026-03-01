@@ -16,3 +16,11 @@ Route::prefix('posts')->group(function () {
 });
 
 Route::get('/categories', [PostController::class, 'categories']);
+
+
+/*
+|--------------------------------------------------------------------------
+| Photo Game Routes
+|--------------------------------------------------------------------------
+*/
+

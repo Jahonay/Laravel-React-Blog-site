@@ -5,11 +5,11 @@ import { api } from '../lib/api';
 import { PostCard } from '../components/Layout';
 
 export default function BlogPost() {
-    const { slug }            = useParams();
-    const [post, setPost]     = useState(null);
+    const { slug } = useParams();
+    const [post, setPost] = useState(null);
     const [related, setRelated] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError]   = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         setLoading(true);
@@ -26,7 +26,7 @@ export default function BlogPost() {
     }, [slug]);
 
     if (loading) return <div style={s.stateMsg}>Loading…</div>;
-    if (error)   return <div style={s.stateMsg}>Post not found. <Link to="/blog">← Back</Link></div>;
+    if (error) return <div style={s.stateMsg}>Post not found. <Link to="/blog">← Back</Link></div>;
 
     const date = new Date(post.published_at).toLocaleDateString('en-US', {
         month: 'long', day: 'numeric', year: 'numeric',
@@ -201,6 +201,7 @@ const s = {
         fontFamily: "'DM Sans', sans-serif",
         fontSize: '1.05rem', color: '#3d2e1e',
         lineHeight: 1.8,
+        whiteSpace: 'pre-wrap'
     },
 
     relatedSection: {

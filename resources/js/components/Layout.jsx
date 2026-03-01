@@ -5,8 +5,9 @@ import { Link, useLocation } from 'react-router-dom';
 export function Navbar() {
     const { pathname } = useLocation();
     const links = [
-        { href: '/',        label: 'Home' },
-        { href: '/blog',    label: 'Blog' },
+        { href: '/', label: 'Home' },
+        { href: '/blog', label: 'Blog' },
+        { href: '/photo-game', label: 'Photo Game' },
     ];
 
     return (
